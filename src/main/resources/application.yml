@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: hua-ai-agent
+  profiles:
+    active: local
+  ai:
+    vectorstore:
+      pgvector:
+        index-type: hnsw
+        dimensions: 1024
+        distance-type: cosine_distance
+        max-document-batch-size: 10000
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+server:
+  port: 8123
+  servlet:
+    context-path: /api
+
+
+# 接口文档配置
+knife4j:
+  enable: true
+  openapi:
+    title: Knife4j官方文档
+    version: 1.0
+    group:
+      default:
+        # 扫描规则
+        api-rule: package
+        # 扫描的具体资源（包路径）。
+        api-rule-resources:
+          - com.huahua.huaaiagent.controller
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: DEBUG

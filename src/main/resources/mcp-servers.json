@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "amap-maps": {
+      "command": "node",
+      "args": [
+        "D:\\code\\hua-ai-agent\\node_modules\\@amap\\amap-maps-mcp-server\\build\\index.js"
+      ],
+      "env": {
+        "AMAP_MAPS_API_KEY": "amap-KeyAPI"
+      }
+    }
+  }
+}

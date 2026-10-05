@@ -1,0 +1,27 @@
+package com.huahua.huaaiagent.tools;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+class FileOperationToolTest {
+
+    @Test
+    void readFile() {
+        FileOperationTool tool=new FileOperationTool();
+        String fileName= "编程导航.txt";
+        String result=tool.readFile(fileName);
+        assertNotNull(result);
+    }
+
+    @Test
+    void writeFile() {
+        FileOperationTool tool = new FileOperationTool();
+        String fileName="编程导航.txt";
+        String content="https://www.baidu.com 程序员编程学习交流区";
+        String result=tool.writeFile(fileName,content);
+        assertNotNull(result);
+    }
+}
